@@ -1,12 +1,24 @@
 /**
- * ArcGIS ImageServer API Wrapper for MBTiles
- * 
- * This server wraps your existing MBTiles server and provides
- * the ArcGIS ImageServer REST API format that ArcGIS JS SDK expects.
- * 
- * Run: node server.js
+ * ArcGIS ImageServer-Compatible Terrain API (Node.js)
+ *
+ * This project emulates an ArcGIS Enterprise ImageServer for terrain data,
+ * allowing ArcGIS JavaScript SDK applications to consume locally hosted
+ * elevation tiles without requiring ArcGIS Enterprise.
+ *
+ * It wraps MBTiles terrain data and exposes REST endpoints that follow the
+ * ArcGIS ImageServer specification expected by ArcGIS JS.
+ *
+ * Elevation tiles can be sourced from:
+ * https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer
+ *
+ * Tiles can be downloaded using:
+ * https://github.com/AliFlux/MapTilesDownloader
+ *
+ * After preparing your MBTiles file, start the server with:
+ *   node index.js
+ * or
+ *   npm start
  */
-
 import http from 'http';
 import https from 'https';
 import fs from 'fs';
@@ -22,7 +34,7 @@ const PORT = 5567;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DtedFilename="Islamabad16_dted_tiles";
+const DtedFilename="PakistanDTEDtiles";
 // Configuration
 const CONFIG = {
     port: 3001,
@@ -438,12 +450,9 @@ serverx.get("/tiles/:fileName/:level/:col/:row", (req, res) => {
     });
 });
 
-
-// Option A: Serve the entire folder as static files (Recommended)
-// This will automatically serve index.html when you visit localhost:8082
 serverx.use(express.static(__dirname));
 
 // Option B: Explicitly serve just the index.html file
-serverx.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+// serverx.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'index.html'));
+// });
