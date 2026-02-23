@@ -5,7 +5,7 @@ dist
 old
 tmp
 .vscode
+.vs
 DynamicResource
 backup
 .node-persist
-tiles

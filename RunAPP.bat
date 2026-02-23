@@ -1,1 +1,1 @@
-node elevation.mjs
+npm run start
