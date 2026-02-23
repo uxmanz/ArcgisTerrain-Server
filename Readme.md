@@ -192,7 +192,7 @@ http://localhost:3001/health
 Inside `index.js`:
 
 ```
-const DtedFilename = "PakistanDTEDtiles";
+const DtedFilename = "IslamabadDtedSample1-15";
 ```
 
 Change this to match your `.mbtiles` file name.
@@ -360,6 +360,7 @@ This helps debug:
 1. Start the Node.js server:
 
    ```
+   npm install
    npm run start
    ```
 
@@ -414,7 +415,7 @@ This demo confirms your implementation meets those requirements.
 The demo is ideal for:
 
 - Testing offline terrain
-- Military / secure environments
+- Secure environments
 - Flight simulation
 - Embedded systems
 - Custom GIS engines
