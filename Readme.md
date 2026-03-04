@@ -419,7 +419,13 @@ The demo is ideal for:
 - Embedded systems
 - Custom GIS engines
 
+------
 
+**Demo page in Action:**
+
+![Demo1](demo1.png)
+
+![Demo2](demo2.png)
 
 # 📄 License
 
